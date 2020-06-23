@@ -1,0 +1,34 @@
+---
+- name: Log Archive | Create directories
+  file:
+    path: "{{ logarchive_dir }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Log Archive | Copy script
+  copy:
+    src: logarchive.py
+    dest: "{{ logarchive_dir }}/logarchive.py"
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Log Archive | Copy configs (cfg files)
+  template:
+    src: default.cfg
+    dest: "{{ logarchive_dir }}/default.cfg"
+    owner: root
+    group: root
+    mode: 0600
+    force: yes
+
+- name: Log Archive | Setup cron
+  template:
+    src: logarchive.cron
+    dest: "/etc/cron.d/logarchive{{ cluster }}"
+    owner: root
+    group: root
+    mode: 0644
+    force: yes

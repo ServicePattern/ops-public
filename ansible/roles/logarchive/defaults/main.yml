@@ -1,0 +1,7 @@
+# Ansible deployment vars
+logarchive_dir: "/etc/archive/logarchive"
+cron_file: "logarchive.cron"
+log_dir: "/mnt/logs"
+archive_dir: "/mnt/storage/log_archive"
+days_to_keep: 90
+cluster: ""

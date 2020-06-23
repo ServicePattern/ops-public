@@ -1,0 +1,7 @@
+---
+- name: Archive servicepattern logs
+  hosts: all
+  gather_facts: false
+  become: true
+  roles:
+    - roles/logarchive
