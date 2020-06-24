@@ -1,13 +1,35 @@
+# -----------------------------------------------------------------------------
 # Ansible deployment vars
+# -----------------------------------------------------------------------------
+# Set the number of days (e.g., 90) to store archived logs.
 days_to_keep: 90
+# This is where the scripts/script-specific logs are stored
 logarchive_dir: "/etc/archive/logarchive"
+# This is the name of the Cron job
 cron_file: "logarchive.cron"
+# Folder on monitoring server where target hosts mount (nfs) their logs
 log_dir: "/mnt/logs"
+# Folder on monitoring server where logs are archived for N days
 archive_dir: "/mnt/storage/log_archive"
+# Regex exclude_targets examples of how to exclude targets:
+# (target = server)
+# 1. Only archive folder (this is the log archive folder itself)
+#   exclude_targets = ['.*rtp.*']
+# 2. Only rtp servers
+#   exclude_targets = ['.*rtp.*']
+# 2. Both archive and rtp servers
+#   exclude_targets = ['archive', '.*rtp.*']
+# 2. Both archive and rtp servers and dmz servers
+#   exclude_targets = ['archive', '.*rtp.*', '.*dmz']
 exclude_targets: "['archive']"
+# Ask target to archive N logs at a time before monitoring server picks them up
 step: 100
+# SSH into target servers from monitoring server
 ssh_user: "bpadmin"
 ssh_key: "/home/bpadmin/.ssh/id_rsa"
+# Bandwidth limit (KBPS) for moving archived logs from target to archive server
 bwlimit: 10000
+# To whom you want to email reports
 recipients: "['ops@brightpattern.com']"
+# Optional cluster names when monitoring server is shared between 2 clusters
 cluster: ""
