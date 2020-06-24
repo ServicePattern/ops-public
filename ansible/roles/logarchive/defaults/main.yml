@@ -1,7 +1,13 @@
 # Ansible deployment vars
+days_to_keep: 90
 logarchive_dir: "/etc/archive/logarchive"
 cron_file: "logarchive.cron"
 log_dir: "/mnt/logs"
 archive_dir: "/mnt/storage/log_archive"
-days_to_keep: 90
+exclude_targets: "['archive']"
+step: 100
+ssh_user: "bpadmin"
+ssh_key: "/home/bpadmin/.ssh/id_rsa"
+bwlimit: 10000
+recipients: "['ops@brightpattern.com']"
 cluster: ""

@@ -7,8 +7,8 @@
 # Requirements:
 # - key based ssh access from archive server to all target hosts
 # - archive server must have all nfs mounted target folders with logs
-# - python 2.7
-# - Centos 6 or 7 with flock command (for cron job)
+# - python 2.6 or 2.7
+# - centos 6 or 7 with flock command (for cron job)
 # ------------------------------------------------------------------------------
 
 import argparse

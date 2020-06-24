@@ -1,2 +1,2 @@
-#*/30 *   *   *   *   root    flock -n /tmp/logarchive{{ cluster }}.lock nice {{ logarchive_dir }}/logarchive.py
-#0    0   *   *   *   root    find {{ archive_dir }}/ -type f -mtime +{{ days_to_keep }} -print -delete > /var/log/logarchive{{ cluster }}_cleanup.log
+*/30 *   *   *   *   root    flock -n /tmp/logarchive{{ cluster }}.lock nice {{ logarchive_dir }}/logarchive.py
+0    0   *   *   *   root    find {{ archive_dir }}/ -type f -mtime +{{ days_to_keep }} -print -delete > /var/log/logarchive{{ cluster }}_cleanup.log
