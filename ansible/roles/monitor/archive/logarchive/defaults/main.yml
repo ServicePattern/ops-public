@@ -17,9 +17,9 @@ archive_dir: "/mnt/storage/log_archive"
 #   exclude_targets = ['.*rtp.*']
 # 2. Only rtp servers
 #   exclude_targets = ['.*rtp.*']
-# 2. Both archive and rtp servers
+# 3. Both archive and rtp servers
 #   exclude_targets = ['archive', '.*rtp.*']
-# 2. Both archive and rtp servers and dmz servers
+# 4. Both archive and rtp servers and dmz servers
 #   exclude_targets = ['archive', '.*rtp.*', '.*dmz']
 exclude_targets: "['archive']"
 # Ask target to archive N logs at a time before monitoring server picks them up
