@@ -1,4 +1,8 @@
 ---
+- name: Load test config
+  include_vars: test.yml
+  when: test|bool
+
 - name: Log Archive | Create directories
   file:
     path: "{{ logarchive_dir }}"
@@ -11,6 +15,14 @@
   copy:
     src: logarchive.py
     dest: "{{ logarchive_dir }}/logarchive.py"
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Cold Storage | Copy script
+  copy:
+    src: coldstorage.py
+    dest: "{{ logarchive_dir }}/coldstorage.py"
     owner: root
     group: root
     mode: 0700
@@ -32,3 +44,12 @@
     group: root
     mode: 0644
     force: yes
+
+- name: Cold Storage | Setup cron
+  template:
+    src: coldstorage.cron
+    dest: "/etc/cron.d/coldstorage{{ cluster }}"
+    owner: root
+    group: root
+    mode: 0644
+    force: no

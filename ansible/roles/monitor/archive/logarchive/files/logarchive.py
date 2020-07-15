@@ -335,6 +335,7 @@ def folderize(target_archive_dir, dry_run=False):
             if s:
                 date = s.groups()[0]
                 logger.debug('Got {0} from log name'.format(date))
+                date = date.replace('_','-')
                 mkdir(os.path.join(target_archive_dir, date))
                 old_path = os.path.join(target_archive_dir, archived_log)
                 new_path = os.path.join(target_archive_dir, date, archived_log)

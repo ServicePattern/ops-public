@@ -1,7 +1,6 @@
 # -----------------------------------------------------------------------------
 # Ansible deployment vars
 # -----------------------------------------------------------------------------
-test: false
 # Set the number of days (e.g., 90) to store archived logs.
 days_to_keep: 90
 # This is where the scripts/script-specific logs are stored
@@ -32,10 +31,10 @@ ssh_key: "/home/bpadmin/.ssh/id_rsa"
 bwlimit: 10000
 # To whom you want to email reports
 #recipients: "['ops@brightpattern.com']"
-recipients: "['ops@brightpattern.com']"
+recipients: "['alexander.fichel@brightpattern.com']"
 # Optional cluster names when monitoring server is shared between 2 clusters
 cluster: ""
 # S3 Bucket for storing for extended periods in addition to archive server
-bucket: "archive.brightpattern.com"
+bucket: "testarchive.brightpattern.com"
 s3_prefix: "logs"
-storage_class: "DEEP_ARCHIVE"
+storage_class: "STANDARD"
