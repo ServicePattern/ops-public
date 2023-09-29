@@ -1,1 +1,1 @@
-#*   *   *   *   *   root    flock -n /tmp/coldstorage{{ cluster }}.lock nice {{ logarchive_dir }}/coldstorage.py
+#15   0   *   *   *   root    flock -n /tmp/coldstorage{{ cluster }}.lock nice {{ logarchive_dir }}/coldstorage.py

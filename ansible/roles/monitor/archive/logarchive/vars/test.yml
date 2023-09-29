@@ -25,16 +25,16 @@ exclude_targets: "['archive']"
 # Ask target to archive N logs at a time before monitoring server picks them up
 step: 100
 # SSH into target servers from monitoring server
-ssh_user: "bpadmin"
-ssh_key: "/home/bpadmin/.ssh/id_rsa"
+ssh_user: "<username>"
+ssh_key: "/home/<username>/.ssh/id_rsa"
 # Bandwidth limit (KBPS) for moving archived logs from target to archive server
 bwlimit: 10000
 # To whom you want to email reports
 #recipients: "['ops@brightpattern.com']"
-recipients: "['alexander.fichel@brightpattern.com']"
+recipients: "['logarchive@example.com']"
 # Optional cluster names when monitoring server is shared between 2 clusters
 cluster: ""
 # S3 Bucket for storing for extended periods in addition to archive server
-bucket: "testarchive.brightpattern.com"
-s3_prefix: "logs"
+bucket: "testlogarchive.example.com"
+s3_prefix: "cluster-logs"
 storage_class: "STANDARD"
